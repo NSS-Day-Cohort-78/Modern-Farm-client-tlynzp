@@ -31,3 +31,4 @@ const crop = function* () {
     }
 }()
 
+console.log(createPlan())

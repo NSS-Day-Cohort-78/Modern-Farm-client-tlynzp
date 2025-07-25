@@ -2,6 +2,22 @@
 // The harvestPlants function must accept the plants array as input.
 // The function will return an array of seed objects.
 
+export const harvestPlants = (plantsArray) => {
+    let harvestedPlants = []
+    for (const plant of plantsArray) {
+        if (plant.type === "Corn") {
+            const halfOutput = plant.output / 2
+            for (let i = 0; i < halfOutput; i++) {
+                harvestedPlants.push(plant)
+            }
+        }
+        else for (let i = 0; i < plant.output; i++) {
+            harvestedPlants.push(plant)
+        }
+    }
+    return harvestedPlants
+}
+
 // Iterate the array of growing plants. On each plant, get the value of the output property.
 // Add that many of the plant objects to the array that the function returns. 
 // 
