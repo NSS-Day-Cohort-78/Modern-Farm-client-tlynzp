@@ -5,8 +5,11 @@
 
 export const catalog = (harvestedArray) => {
     let harvestHTMLString = ''
-    for (const plant of harvestedArray) {
-        harvestHTMLString += `<section class="plant">${plant.type}</section>`
+    let plantId = 1
+    const sortedHarvestArray = [...harvestedArray].sort((a, b) => a.type.localeCompare(b.type))
+    for (const plant of sortedHarvestArray) {
+        harvestHTMLString += `<section class="plant" data-id:${plantId}>${plant.icon}</section>`
+        plantId++
     }
     return harvestHTMLString
 }
